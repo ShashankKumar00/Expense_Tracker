@@ -23,16 +23,19 @@ def display_summary():
 
 keyboard.add_hotkey('F2', display_summary)
 
-print("LEDGER RUNNING IN SECURE BACKGROUND MODE...")
-print("-> Press [F2] globally to display summaries.\n")
+print("==================================================")
+print("       PERSONAL EXPENSE & LEDGER DASHBOARD        ")
+print("==================================================")
+print("-> Press [F2] globally to display category summaries.")
+print("-> Type 'exit' in the 'Money Used' prompt to close the app safely.\n")
 
 while True:
-    money_amount = (input("Money Used: "))
+    money_amount = (input("Money (+ for Earned / - for Spent):"))
     if money_amount == "exit":
         break
     money_amount = int(money_amount)
-    money_reason = (input("Money Used For: "))
-    money_location = (input("Money Used At: "))
+    money_reason = (input("Transaction Category: "))
+    money_location = (input("Transaction Source: "))
 
     list1 = f"{money_amount} | {money_reason} | {money_location}\n"
 
