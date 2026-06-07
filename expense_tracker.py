@@ -41,14 +41,23 @@ def display_month_summary():
                 monthly_ledger[month_key][date_category] += date_value
             else:
                 monthly_ledger[month_key][date_category] = date_value
-
-
-
+    
+    print("\n========= [ MONTHLY DATE SHEET ] =========")
+    for month, categories in monthly_ledger.items():
+        print(f"\n[ {month} ]")
+        
+        for cat, amt in categories.items():
+            print(f"  * {cat}: {amt}")
+            
+    print("\n==========================================")
+        
+keyboard.add_hotkey('F3', display_month_summary)
 
 print("==================================================")
 print("       PERSONAL EXPENSE & LEDGER DASHBOARD        ")
 print("==================================================")
 print("-> Press [F2] globally to display category summaries.")
+print("-> Press [F3] globally to display date wise summary.")
 print("-> Type 'exit' in the 'Money Used' prompt to close the app safely.\n")
 
 while True:
